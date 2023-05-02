@@ -97,11 +97,14 @@ Use the higher order function `getAverageGoals` to do the following:
  
 */
 
-function getAverageGoals(data) {
-    const averageHomegoals = data.reduce(function(acc, item){
-        return acc + item['home team goals'] + item['Away Teams Goals']
-    }, 0);
-    return (averageHomegoals / data.length).toFixed(2);
+
+
+function getAverageGoals(fifaData) {
+    const averageHomegoals = fifaData.reduce((acc, item) => {
+        console.log(acc, item['Home Team Goals'], item['Away Team Goals']);
+        return acc + item['Home Team Goals'] + item['Away Team Goals'];
+    }, 0)
+    return (averageHomegoals / fifaData.length).toFixed(2);
  }
 
 
